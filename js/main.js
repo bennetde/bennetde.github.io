@@ -1,11 +1,11 @@
-var host = 'bennet.page';
+var host = 'bennet.tech';
 var username = 'guest';
 function getPrefix() {
     return `${username}@${host}`;
 }
 
 function changeText(string) {
-    document.getElementById('inputDisplay').innerHTML = " " + string;
+    document.getElementById('inputDisplay').innerHTML = string;
 }
 
 function submitText(string) {
