@@ -3,16 +3,17 @@
     <head>
         <title>Bennet Deboben</title>
         <link rel="stylesheet" href="css/main.css">
+        <script type="text/javascript" src='js/data.js'></script>
+        <script type="text/javascript" src='js/commands.js'></script>
     </head>
     <body>
-        <div id="start">
-            Welcome to my page!<br>
-            © Bennet Deboben 2021
-        </div>
+
         <div id='previousCommands' class="commands">
+            <p id="motd">
+            </p>
         </div>
         <div id='currentInput' class='input'>
-            <p class='user bold'>guest@bennet.tech</p>
+            <p class='user bold' id='usernameInput'></p>
             <p>:</p>
             <p class='cursor bold'>~</p>
             <p>$&nbsp;</p>
