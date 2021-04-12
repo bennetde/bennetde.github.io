@@ -4,9 +4,13 @@ function createText(text) {
     return node;
 }
 
-function createImage(src) {
+function createImage(src, width, height) {
     let node = document.createElement("img");
-    node.src = `svg/${src}.svg`;
+    node.src = `img/${src}`;
+    if(width != undefined && height != undefined) {
+        node.style = `width:${width}%;height:${height};`;
+    }
+
     return node;
 }
 
@@ -58,8 +62,8 @@ function contact() {
     
     let divider = document.createElement('div');
     divider.className = 'commands'
-    let discord = createImageWithText(data.contact.discord, 'discord', false, null)
-    let github = createImageWithText('GitHub', 'github', true, data.contact.github);
+    let discord = createImageWithText(data.contact.discord, 'discord.svg', false, null)
+    let github = createImageWithText('GitHub', 'github.svg', true, data.contact.github);
 
     divider.appendChild(github);
     divider.appendChild(discord);
@@ -94,6 +98,10 @@ function all() {
     return divider;
 }
 
+function dog() {
+    return createImage('lenny.jfif', 50, 50);
+}
+
 let commands = {
     "help": help,
     "clear": clear,
@@ -103,5 +111,6 @@ let commands = {
     "contact": contact,
     "motd": motd,
     "name": changeName,
-    "all": all
+    "all": all,
+    "dog": dog,
 }
