@@ -1,4 +1,26 @@
-<link rel="stylesheet" type="text/css" href="epic.css" />
-<div class="parent">
-    <img class="child" src="bennet.png"/>
-</div>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bennet Deboben</title>
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <div id="start">
+            Welcome to my page!<br>
+            © Bennet Deboben 2021
+        </div>
+        <div id='previousCommands' class="commands">
+        </div>
+        <div id='currentInput' class='input'>
+            <p class='user bold'>guest@bennet.page</p>
+            <p>:</p>
+            <p class='cursor bold'>~</p>
+            <p>$&nbsp;</p>
+            <p id='inputDisplay'></p>
+            <p class="blink">█</p>
+        </div>
+
+        <input id='inputText' class="hidden" onblur="this.focus()" autofocus oninput="changeText(this.value)" onsubmit="submitText(this.value)" onkeydown="disableCaret(event)"/> 
+        <script src="js/main.js"></script>
+    </body>
+</html>
