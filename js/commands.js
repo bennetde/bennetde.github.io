@@ -1,6 +1,6 @@
 function createText(text) {
     let node = document.createElement("p");
-    node.innerHTML = text;
+    node.innerText = text;
     return node;
 }
 
@@ -71,12 +71,27 @@ function motd() {
 }
 
 function changeName(newName) {
+    if(newName == '') {
+        return createText("Usage: name <name>");
+    }
     if(newName == 'root') {
         return createText('A̙̳̲͓͋̎̀c̖c͏̺̅e̲ͪ͋́͟͟s̴̮̦̥̮ͣs̤̻ ̠̰͗ͧ͊ͣd̤͔̝̤ͬ͛e̵̗̻̪̓̔̈̿n͏ḭ̷̧̌͝͏́̈͢e̟͍͓͊̐͋̾ͧ͡d͓');
     }
     username = newName;
     document.getElementById('usernameInput').innerHTML = getPrefix();
     return createText(`Name changed to ${newName}`);
+}
+
+function all() {
+    let divider = document.createElement('div');
+    divider.className='commands';
+    divider.appendChild(createText("About:"))
+    divider.appendChild(about());
+    divider.appendChild(createText("Skills:"))
+    divider.appendChild(skills());
+    divider.appendChild(createText("Contact:"))
+    divider.appendChild(contact());
+    return divider;
 }
 
 let commands = {
@@ -87,5 +102,6 @@ let commands = {
     "skills": skills,
     "contact": contact,
     "motd": motd,
-    "name": changeName
+    "name": changeName,
+    "all": all
 }

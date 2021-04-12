@@ -1,5 +1,5 @@
-var data = {
-    "motd": "Welcome to my... terminal?\n © 2021 Bennet Deboben",
+const data = {
+    "motd": "Welcome to my... terminal?\nType 'help' for a list of commands. Type 'all' for all relevant information about me.\n © 2021 Bennet Deboben",
     "contact": {
         "github": "https://github.com/bennetde",
         "discord": "Bennet#6438"
