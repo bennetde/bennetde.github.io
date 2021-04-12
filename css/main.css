@@ -1,3 +1,11 @@
+@import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@5.2/distr/fira_code.css);
+/* Specify in CSS */
+code { font-family: 'Fira Code', monospace; }
+
+@supports (font-variation-settings: normal) {
+  code { font-family: 'Fira Code VF', monospace; }
+}
+
 :root {
     --main-color: #F2F2F2;
     --main-bg: #333333;
@@ -6,22 +14,10 @@
     --cursor-color-bg: #f6f6f6;
 }
 
-@font-face {
-    font-family: fira;
-    src: url(../fonts/FiraCode-Regular.ttf);
-    font-weight: normal;
-}
-
-@font-face {
-    font-family: fira;
-    src: url(../fonts/FiraCode-Bold.ttf);
-    font-weight: bold;
-}
-
 body {
     background-color: #333333;
     color: #F2F2F2;
-    font-family: fira;
+    font-family: 'Fira Code';
 }
 
 p {
