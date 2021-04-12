@@ -70,6 +70,14 @@ function motd() {
     return createText(data.motd);
 }
 
+function changeName(newName) {
+    if(newName == 'root') {
+        return createText('A̙̳̲͓͋̎̀c̖c͏̺̅e̲ͪ͋́͟͟s̴̮̦̥̮ͣs̤̻ ̠̰͗ͧ͊ͣd̤͔̝̤ͬ͛e̵̗̻̪̓̔̈̿n͏ḭ̷̧̌͝͏́̈͢e̟͍͓͊̐͋̾ͧ͡d͓');
+    }
+    username = newName;
+    document.getElementById('usernameInput').innerHTML = getPrefix();
+    return createText(`Name changed to ${newName}`);
+}
 
 let commands = {
     "help": help,
@@ -79,4 +87,5 @@ let commands = {
     "skills": skills,
     "contact": contact,
     "motd": motd,
+    "name": changeName
 }
