@@ -1,80 +1,33 @@
-var host = 'bennet.tech';
-var username = 'guest';
-function getPrefix() {
-    return `${username}@${host}`;
-}
+import { Terminal } from "./Terminal.js";
 
-function changeText(string) {
-    document.getElementById('inputDisplay').innerText = string;
-}
 
-function submitText(string) {
-    // Add Element to List
-    let newElem = createPreviousInput(string);
-    document.getElementById('previousCommands').appendChild(newElem);
+let terminal = new Terminal(document.getElementById("previousCommands"));
 
-    let commandResult = callCommand(string);
-    if(commandResult != undefined)
-        document.getElementById('previousCommands').appendChild(commandResult)
-
-    newElem.scrollIntoView();
-
-    // Clear Input
-    document.getElementById('inputText').value = '';
-    document.getElementById('inputDisplay').innerText = '';
-}
+let inputElem = document.getElementById("inputText");
+let inputDisplay = document.getElementById("inputDisplay");
 
 // Listen for Enter event
-document.getElementById("inputText").addEventListener("keyup", function(event) {
+inputElem.addEventListener("keyup", function(event) {
     if(event.key === "Enter") {
-        submitText(document.getElementById('inputText').value);
+        let input = inputElem.value;
+        terminal.recieveInput(input);
+        inputElem.value = '';
+        inputDisplay.innerText = '';
     }
 });
 
-function disableCaret(event) {
-
+inputElem.addEventListener("keydown", function(event) {
     if(event.key === "ArrowLeft" || event.key === "ArrowRight") {
         event.preventDefault();
     }
-}
+});
 
-function createPreviousInput(input) {
-    let divider = document.createElement("div");
-    divider.classList.add("input");
-    
-    let user = document.createElement("p");
-    user.className = "user bold";
-    user.innerText = getPrefix();
-
-    let colon = document.createElement("p");
-    colon.innerText = ":";
-
-    let cursor = document.createElement("p");
-    cursor.className = "cursor bold";
-    cursor.innerText = "~";
-
-    let end = document.createElement("p");
-    end.innerText = "$ " + input;
-
-    divider.appendChild(user);
-    divider.appendChild(colon);
-    divider.appendChild(cursor);
-    divider.appendChild(end);
-
-    return divider;
-}
-
-function callCommand(input) {
-
-    let arr = input.split(" ");
-    let cmd = commands[arr[0]];
-    if(cmd === undefined) {
-        return createText("Unknown command");
-    }
-    return commands[arr[0]](arr.slice(1).join(" "));
-}
+inputElem.addEventListener("input", function(event) {
+    inputDisplay.innerText = event.target.value;
+})
 
 window.onload = function() {
-    document.getElementById("usernameInput").innerHTML = getPrefix();
+    document.getElementById("username").innerHTML = terminal.getPrefix();
     document.getElementById("motd").innerText = (data.motd);
+
 }

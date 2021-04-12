@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Bennet Deboben's web... terminal" />
         <meta name="author" content="Bennet Deboben"/>
-        <meta name="keywords" content="Bennet Deboben, Portfolio, Developer, IT"/>
+        <meta name="keywords" content="Bennet, Deboben, Portfolio, Developer, IT"/>
         <link rel="stylesheet" href="css/main.css">
         <script type="text/javascript" src='js/data.js'></script>
         <script type="text/javascript" src='js/commands.js'></script>
@@ -17,7 +17,7 @@
             </p>
         </div>
         <div id='currentInput' class='input'>
-            <p class='user bold' id='usernameInput'></p>
+            <p class='user bold' id='username'></p>
             <p>:</p>
             <p class='cursor bold'>~</p>
             <p>$&nbsp;</p>
@@ -25,7 +25,7 @@
             <p class="blink">█</p>
         </div>
 
-        <input id='inputText' class="hidden" onblur="this.focus()" autofocus oninput="changeText(this.value)" onsubmit="submitText(this.value)" onkeydown="disableCaret(event)"/> 
-        <script src="js/main.js"></script>
+        <input id='inputText' class="hidden" onblur="this.focus()" autofocus/> 
+        <script type="module" src="js/main.js"></script>
     </body>
 </html>

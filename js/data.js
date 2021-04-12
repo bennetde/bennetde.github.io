@@ -1,4 +1,6 @@
 const data = {
+    "username": "guest",
+    "host": "bennet.tech",
     "motd": "Welcome to my... terminal?\nType 'help' for a list of commands. Type 'all' for all relevant information about me.\n © 2021 Bennet Deboben",
     "contact": {
         "github": "https://github.com/bennetde",
