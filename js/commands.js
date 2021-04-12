@@ -66,6 +66,10 @@ function contact() {
     return divider;
 }
 
+function motd() {
+    return createText(data.motd);
+}
+
 
 let commands = {
     "help": help,
@@ -73,5 +77,6 @@ let commands = {
     "echo": echo,
     "about": about,
     "skills": skills,
-    "contact": contact
+    "contact": contact,
+    "motd": motd,
 }
