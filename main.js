@@ -24,6 +24,7 @@ const renderer = new THREE.WebGLRenderer({alpha: false, canvas, antialias: true}
 renderer.toneMapping = THREE.ReinhardToneMapping;
 renderer.toneMappingExposure = Math.pow(1, 4.0);
 renderer.setSize( window.innerWidth, window.innerHeight );
+
 let gltfscene = null;
 var clock = new THREE.Clock();
 
@@ -123,6 +124,14 @@ addEventListener("mousemove", (event) => {
   - ( event.clientY / window.innerHeight ) * 2 + 1,
   0.5,
     );
+});
+
+addEventListener("resize", (event) => {
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    bloomComposer.setSize(window.innerWidth, window.innerHeight);
+    finalComposer.setSize(window.innerWidth, window.innerHeight);
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
 });
 
 function render() {
