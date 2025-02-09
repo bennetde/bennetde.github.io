@@ -73,7 +73,7 @@ body {
     font-style: unset;
 }
 
-#separator>img {
+#separator>a>img {
     width: 20px;
     filter: invert(1);
 }
