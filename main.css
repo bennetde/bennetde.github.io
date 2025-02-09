@@ -16,6 +16,14 @@ h2 {
 p,span,a {
     font-family: "Ubuntu", serif;
 }
+
+a {
+    all: unset;
+}
+
+a:hover {
+    cursor: pointer;
+}
 html {
     scroll-behavior: smooth;
 }
@@ -208,6 +216,7 @@ body {
     height: 16px;
     float: left;
     margin-right: 6px;
+    filter: invert(1);
 }
 
 .bigpill {
@@ -266,7 +275,6 @@ a.button:hover {
 }
 
 #footer>p {
-    all: unset;
     margin-top: 0;
 
 }
