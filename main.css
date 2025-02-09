@@ -37,7 +37,9 @@ body {
     grid-template-rows: 
         90vh 
         10vh
-        100vh
+        [about-me] min-content 
+        [project-header] min-content
+        min-content
         min-content
         min-content
         min-content
@@ -69,6 +71,7 @@ body {
     text-align: center;
     grid-row: 2;
     font-style: unset;
+    text-decoration: underline;
 }
 #separator:hover {
     cursor: pointer;
@@ -88,6 +91,13 @@ body {
     margin-top: 10em;
     grid-column: 4/8;
     grid-row: 3;
+}
+
+.projects {
+    margin-top: 300px;
+    grid-row: project-header;
+    grid-column: 4/10;
+    text-align: center;
 }
 
 .project {

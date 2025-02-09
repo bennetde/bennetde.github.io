@@ -41,6 +41,7 @@
                 <span class="pill"><img src="img/wgpu.svg">WebGPU</span>
                 <span class="pill"><img src="img/wgpu.svg">ThreeJS</span>
             </div>
+            <h1 class="projects">Projects</h1>
             <div class="project">
                 <div class="titlebar">
                     <h2 title="Project name">Box Chaos</h2>
@@ -51,7 +52,11 @@
                     <img src="img/boxchaos.png">
                 </div>
                 <div class="content">
-                    <p>A lot of text will be here.</p>
+                    <p><b>About</b>: Box Chaos is a local multiplayer game about sorting in boxes onto their correct conveyor belts as fast as possible. Collaboration and quick thinking are needed to overcome ever fasting coming packages.</p>
+                    <p>Created in 4 days as part of the "TUM Games Engineering Nachprojekte".</p>
+                    <p><b>My role</b>: Game Designer / Game Programmer</p>
+                    <p><b>Game Design</b>: Designed player controller, base game idea, and balanced difficulty progression</p>
+                    <p><b>Game Programming</b>: Implemented player controller, prototyped player interactions</p>
                 </div>
                 <div class="bottombar">
                     <span class="pill"><img src="img/unity.svg">Unity</span>
@@ -59,6 +64,29 @@
                 </div>
                 <div class="bottombar right">
                     <a class="button" href="https://richwill.itch.io/box-chaos" target="_blank">View more</a>
+                </div>
+            </div>
+            <div class="project">
+                <div class="titlebar">
+                    <h2 title="Project name">Volume Renderer</h2>
+                    <p title="Project members"><img src="img/user-group.svg"> 1</p>
+                    <p title="Year of creation"><img src="img/calendar-solid.svg"> 2024</p>
+                </div>
+                <div class="imgc">
+                    <img src="img/volumerenderer.png">
+                </div>
+                <div class="content">
+                    <p><b>About</b>: Volume Renderer is a ray marcher written in Rust and WebGPU as part of my bachelor's thesis. The renderer was used in combination with <a>DiffDVR</a> to measure the quality of reconstructed volumes.</p>
+                    <p>To improve frame rate limitations, the renderer uses Bounding Box optimizations to exit out early in the rendering loop.</p>
+                    <p>Furthermore the renderer uses Transfer Functions to add color to volumes based on their opacity.</p>
+                    <p>Overall, the renderer can display high resolution (i.e. 1024x1024x1024) volumes with a frametime less than 60ms at a 1024x1024 resoultion.</p>
+                </div>
+                <div class="bottombar">
+                    <span class="pill"><img src="img/vulkan.svg">WebGPU</span>
+                    <span class="pill"><img src="img/rust.svg">Rust</span>
+                </div>
+                <div class="bottombar right">
+                    <a class="button" href="https://github.com/bennetde/particles" target="_blank">View more</a>
                 </div>
             </div>
             <div class="project">
@@ -71,7 +99,11 @@
                     <img src="img/particles.png">
                 </div>
                 <div class="content">
-                    <p>A lot of text will be here.</p>
+                    <p><b>About</b>: Particles is a particles physics simulation inspired by <a>Clusters</a> introduced by <a>this guy</a>.</p>
+                    <p>Written as a project for learning the Vulkan graphics API.</p>
+                    <p>To overcome the limited amount of particles, I further added a compute shader system to simulate particles directly on the GPU. This 
+                        increased the amount of simulatenous particles from ~200 to over 32.000.
+                    </p>
                 </div>
                 <div class="bottombar">
                     <span class="pill"><img src="img/vulkan.svg">Vulkan</span>
@@ -85,13 +117,17 @@
                 <div class="titlebar">
                     <h2 title="Project name">SWE Visualizer</h2>
                     <p title="Project members"><img src="img/user-group.svg"> 4</p>
-                    <p title="Year of creation"><img src="img/calendar-solid.svg"> 2024</p>
+                    <p title="Year of creation"><img src="img/calendar-solid.svg">2023-2024</p>
                 </div>
                 <div class="imgc">
                     <img src="img/SWEVisualizer_Chile.png">
                 </div>
                 <div class="content">
-                    <p>A lot of text will be here.</p>
+                    <p><b>About</b>: SWE Visualizer is a shallow water equations visualization tool, that can display pre-computed tsunami simulations.</p>
+                    <p>Created as a group project for the university course <a>Tsunami-Simulation</a>.</p>
+                    <p><b>My role</b>: Team Lead / Graphics Implementation</p>
+                    <p><b>Team Lead</b>: As Team Lead I gave each team member small tasks and introduced them to the OpenGL graphics API.</p>
+                    <p><b>Graphics Implementation</b>: Implemented the base graphics functionality and simulation playback features that could then be built upon by other team members.</p>
                 </div>
                 <div class="bottombar">
                     <span class="pill"><img src="img/opengl.svg">OpenGL</span>
