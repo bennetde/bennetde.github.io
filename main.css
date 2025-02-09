@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+h1 {
+    font-family: 'Space Grotesk', serif;
+    font-weight: 600;
+    font-size: 30px;
+    white-space: pre;
+}
+
+h2 {
+    font-family: 'Space Grotesk', serif;
+    font-weight: 500px;
+}
+
+p,span,a {
+    font-family: "Ubuntu", serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    --gap: 40em;
+    margin: 0;
+    background: radial-gradient(circle at center, #0f568e 0,  hsl(206, 42%, 15%) 100%);
+    background-attachment: fixed;
+    color: #fff;
+    width: 100%;
+}
+
+#container {
+    display: grid;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 
+        90vh 
+        10vh
+        100vh
+        min-content
+        min-content
+        min-content
+        [footer] 30px
+    ;
+}
+
+#three-canvas {
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#header {
+    grid-column: 4/8;
+    grid-row: 1;
+}
+
+#header>h1 {
+    font-size: 5em;
+    padding: 0;
+    margin-top: 45%;
+    margin-bottom: 0px;
+}
+
+#separator {
+    grid-column: 1/13;
+    text-align: center;
+    grid-row: 2;
+    font-style: unset;
+}
+#separator:hover {
+    cursor: pointer;
+}
+
+#separator>a{
+    all: unset;
+    font-family: "Ubuntu", serif;
+}
+
+#see-more {
+    grid-column: 1/13;
+    grid-row: 3;
+}
+
+#about-me {
+    margin-top: 10em;
+    grid-column: 4/8;
+    grid-row: 3;
+}
+
+.project {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    display: grid;
+    grid-column: 4/10;
+    grid-row: auto;
+
+    grid-template-columns: 1fr 1.618fr;
+    grid-template-rows: 20px 400px min-content;
+    row-gap: 20px;
+    column-gap: 20px;
+
+    background-color: #272727aa;
+
+    padding: 10px;
+}
+
+
+.project.right {
+    grid-column: 5/10;
+}
+
+.titlebar {
+    display: inline;
+    float: left;
+    grid-row: 1;
+    grid-column: 1/span 2;
+}
+
+.titlebar>* {
+    display: inline;
+    margin-right: 20px;
+}
+
+.titlebar>*>svg {
+    display: inline;
+    height: 55%;
+    color: white;
+    fill: white;
+}
+
+.titlebar>p>img {
+    display: inline;
+    height: 75%;
+    color: white;
+    filter: invert(1);
+}
+
+.project>.imgc {
+    grid-row: 2;
+    grid-column: 1;
+    max-height: 100%;
+    max-width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.project>.imgc>img {
+    transition: transform .2s; /* Animation */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project>.imgc>img:hover {
+    transform: scale(1.5);
+}
+
+.project>.content {
+    grid-row: 2;
+    grid-column: 2;
+}
+
+.project>.bottombar {
+    display: inline-flex;
+    grid-row: 3;
+    grid-column: 1;
+    flex-direction: row;
+    align-items: end;
+    justify-items: start;
+}
+
+.project>.bottombar.right {
+    display: inline-flex;
+    grid-row: 3;
+    grid-column: 2;
+    flex-direction: column;
+    justify-items: end;
+    align-items: end;
+}
+
+.pill {
+    display: inline-block;
+    background-color: #0f568e;
+    margin-right: 3px;
+    border-radius: 3px;
+    padding: 5px;
+    text-align: right;
+}
+
+.pill>img {
+    height: 16px;
+    float: left;
+    margin-right: 6px;
+}
+
+.bigpill {
+    display: inline-block;
+    background-color: #0f568e;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    padding: 7px;
+    border-width: 3px;
+
+}
+
+.bigpill>img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.bigpill>svg {
+    display: block;
+    margin:auto;
+    width: 100%;
+    text-align: center;
+}
+
+.bigpill:hover {
+    filter: brightness(85%);
+}
+
+a.button {
+    all: unset;
+    font-family: "Ubuntu", serif;
+    padding: 10px;
+    color:white;
+    background-color: #0f568e;
+    width: 100px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+a.button:hover {
+    filter: brightness(85%);
+    cursor: pointer;
+}
+
+#footer {
+    display: inline-block;
+    grid-column: 1/13;
+    grid-row: footer;
+    background-color: #272727aa;
+    text-align: center;
+    padding: 5px;
+}
+
+#footer>p {
+    all: unset;
+    margin-top: 0;
+
+}

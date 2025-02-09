@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Bennet Deboben</title>
+        <link rel="stylesheet" type="text/css" href="main.css">
+	</head>
+	<body>
+        <div id="container">
+            <div id="header">
+                <h1>Bennet Deboben</h1>
+                <span>Gameplay & Graphics Programmer</span>
+                <br style="margin-bottom: 20px;">
+                <a href="https://github.com/bennetde" target="_blank"><span class="bigpill"><img src="img/github.svg"></span></a>
+                <a href="https://www.linkedin.com/in/bennet-deboben-6320632a2/" target="_blank"><span class="bigpill"><img src="img/linkedin.svg"></span></a>
+                <a href="mailto:bennet@deboben.de"><span class="bigpill"><img src="img/mail.svg"></span></a>
+            </div>
+            <div id="separator">
+                <a href="#about-me">See more</a>
+            </div>
+            <div id="about-me">
+                <h2>About me</h2>
+                <p>My name is Bennet. I am <span id="age">24</span> years old. I graduated from TU Munich as a bachelor of science in Informatics at the end of 2024.
+                I am interested in all and everything regarding computer graphics and game programming. Feel free to check out my 
+                projects at the bottom of this page.</p>
+                <h2>Skills</h2>
+                <p>Programming Languages:</p>
+                <span class="pill"><img src="img/rust.svg">Rust</span>
+                <span class="pill"><img src="img/cplusplus.svg">C++</span>
+                <span class="pill">C#</span>
+                <span class="pill">JavaScript</span>
+                <p>Tools:</p>
+                <span class="pill"><img src="img/unity.svg">Unity</span>
+                <span class="pill"><img src="img/godotengine.svg">Godot</span>
+                <span class="pill"><img src="img/godotengine.svg">Unreal Engine</span>
+                <span class="pill"><img src="img/git.svg">Git</span>
+                <span class="pill"><img src="img/docker.svg">Docker</span>
+                <p>Tech:</p>
+                <span class="pill"><img src="img/vulkan.svg">Vulkan</span>
+                <span class="pill"><img src="img/opengl.svg">OpenGL</span>
+                <span class="pill"><img src="img/wgpu.svg">WebGPU</span>
+                <span class="pill"><img src="img/wgpu.svg">ThreeJS</span>
+            </div>
+            <div class="project">
+                <div class="titlebar">
+                    <h2 title="Project name">Box Chaos</h2>
+                    <p title="Project members"><img src="img/user-group.svg"> 3</p>
+                    <p title="Year of creation"><img src="img/calendar-solid.svg"> 2024</p>
+                </div>
+                <div class="imgc">
+                    <img src="img/boxchaos.png">
+                </div>
+                <div class="content">
+                    <p>A lot of text will be here.</p>
+                </div>
+                <div class="bottombar">
+                    <span class="pill"><img src="img/unity.svg">Unity</span>
+                    <span class="pill"><img src="">C#</span>
+                </div>
+                <div class="bottombar right">
+                    <a class="button" href="https://richwill.itch.io/box-chaos" target="_blank">View more</a>
+                </div>
+            </div>
+            <div class="project">
+                <div class="titlebar">
+                    <h2 title="Project name">Particles</h2>
+                    <p title="Project members"><img src="img/user-group.svg"> 1</p>
+                    <p title="Year of creation"><img src="img/calendar-solid.svg"> 2025</p>
+                </div>
+                <div class="imgc">
+                    <img src="img/particles.png">
+                </div>
+                <div class="content">
+                    <p>A lot of text will be here.</p>
+                </div>
+                <div class="bottombar">
+                    <span class="pill"><img src="img/vulkan.svg">Vulkan</span>
+                    <span class="pill"><img src="img/cplusplus.svg">C++</span>
+                </div>
+                <div class="bottombar right">
+                    <a class="button" href="https://github.com/bennetde/particles" target="_blank">View more</a>
+                </div>
+            </div>
+            <div class="project">
+                <div class="titlebar">
+                    <h2 title="Project name">SWE Visualizer</h2>
+                    <p title="Project members"><img src="img/user-group.svg"> 4</p>
+                    <p title="Year of creation"><img src="img/calendar-solid.svg"> 2024</p>
+                </div>
+                <div class="imgc">
+                    <img src="img/SWEVisualizer_Chile.png">
+                </div>
+                <div class="content">
+                    <p>A lot of text will be here.</p>
+                </div>
+                <div class="bottombar">
+                    <span class="pill"><img src="img/opengl.svg">OpenGL</span>
+                    <span class="pill"><img src="img/cplusplus.svg">C++</span>
+                </div>
+                <div class="bottombar right">
+                    <a class="button" href="https://github.com/bennetde/swevisualizer" target="_blank">View more</a>
+                </div>
+            </div>
+            <div id="footer">
+                <p>Made with 🍝 code, hosted on GitHub</p>
+            </div>
+            <canvas id="three-canvas"></canvas>
+        </div>
+        <script type="x-shader/x-vertex" id="vertexshader">
+			varying vec2 vUv;
+			void main() {
+				vUv = uv;
+				gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+			}
+		</script>
+		<script type="x-shader/x-fragment" id="fragmentshader">
+			uniform sampler2D baseTexture;
+			uniform sampler2D bloomTexture;
+			varying vec2 vUv;
+			void main() {
+				gl_FragColor = ( texture2D( baseTexture, vUv ) + vec4( vec3(1.0), 0.0 ) * texture2D( bloomTexture, vUv ) );
+			}
+		</script>
+		<script type="module" src="/main.js"></script>
+	</body>
+</html>
