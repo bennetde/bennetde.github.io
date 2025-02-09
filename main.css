@@ -255,7 +255,7 @@ a.button {
     padding: 10px;
     color:white;
     background-color: #0f568e;
-    width: 100px;
+    width: 120px;
     text-align: center;
     vertical-align: middle;
 }
@@ -263,6 +263,13 @@ a.button {
 a.button:hover {
     filter: brightness(85%);
     cursor: pointer;
+}
+
+a.button>img {
+    display: inline;
+    height: 1em;
+    margin-bottom: -3px;
+    filter: invert(1);
 }
 
 #footer {
